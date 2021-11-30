@@ -1,3 +1,4 @@
 .env
+Procfile
 __pycache__/
 env/
