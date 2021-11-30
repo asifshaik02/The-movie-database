@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Explore: {{_type}}s</title>
+{% endblock title %}
+{% block content %}
+    <section class="category">
+        <h2>{{_type}}</h2>
+        <section class="category-content">
+            <h3>Trending</h3>
+            <section class="data">
+                {% for i in t %}
+                    <div class="thumbnail">
+                        <a href="{{i['path']}}">
+                            <img src="{{i['img']}}" alt="poster" width="200" height="300">
+                            <h4>{{i['title']}}</h4>
+                        </a>
+                    </div>
+                {% endfor %}
+                
+            </section>
+        </section>
+        <section class="category-content">
+            <h3>Popular</h3>
+            <section class="data">
+                {% for i in p %}
+                <div class="thumbnail">
+                    <a href="{{i['path']}}">
+                        <img src="{{i['img']}}" alt="poster" width="200" height="300">
+                        <h4>{{i['title']}}</h4>
+                    </a>
+                </div>
+                {% endfor %}
+                
+            </section>
+        </section>
+    </section>
+{% endblock content %}

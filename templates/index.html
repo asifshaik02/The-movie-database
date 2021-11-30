@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Home-MMDB</title>
+{% endblock title %}
+    {% block content %}
+        <section class="welcome">
+            <h1>Welcome.</h1>
+            <p>To the mini movie database created using TMDB's API.<br>
+                Explore all movies, Tv series and Actors.<br>
+                Get trending movie and tv details, know about your favorite actors.
+            </p>
+            <div class="searchbox">
+                <input type="search" name="search" id="search" placeholder="search for movie,tv,person.." onkeydown="sendUrl()">
+                <input type="submit" value="search" onclick="sendUrl(1)">
+            </div>
+            <script>
+                function sendUrl(val = 0) {
+                    if(event.key === 'Enter' || val === 1){
+                        window.location.assign("/search/" + document.getElementById("search").value);
+                    }
+                }
+            </script>
+        </section>
+        <section class="category">
+            <h2>Trending</h2>
+            <section class="category-content">
+                <h3>Movies</h3>
+                <section class="data">
+                    {% for d in mt %}
+                    <div class="thumbnail">
+                        <a href="{{ d['path'] }}">
+                            <img src="{{ d['img'] }}" alt="poster" width="200" height="300">
+                            <h4>{{d['title']}}</h4>
+                        </a>
+                    </div>
+                    {% endfor %}
+        
+                </section>
+            </section>
+            <section class="category-content">
+                <h3>TV Shows</h3>
+                <section class="data">
+                    {% for d in tt %}
+                    <div class="thumbnail">
+                        <a href="{{ d['path'] }}">
+                            <img src="{{ d['img'] }}" alt="poster" width="200" height="300">
+                            <h4>{{d['title']}}</h4>
+                        </a>
+                    </div>
+                    {% endfor %}
+        
+                </section>
+            </section>
+        </section>
+        <section class="category">
+            <h2>Now Playing</h2>
+            <section class="category-content">
+                <h3>Movies</h3>
+                <section class="data">
+                    {% for d in mo %}
+                    <div class="thumbnail">
+                        <a href="{{ d['path'] }}">
+                            <img src="{{ d['img'] }}" alt="poster" width="200" height="300">
+                            <h4>{{d['title']}}</h4>
+                        </a>
+                    </div>
+                    {% endfor %}
+        
+                </section>
+            </section>
+            <section class="category-content">
+                <h3>TV Shows</h3>
+                <section class="data">
+                    {% for d in to %}
+                    <div class="thumbnail">
+                        <a href="{{ d['path'] }}">
+                            <img src="{{ d['img'] }}" alt="poster" width="200" height="300">
+                            <h4>{{d['title']}}</h4>
+                        </a>
+                    </div>
+                    {% endfor %}
+        
+                </section>
+            </section>
+        </section>
+    {% endblock content %}
+        
+    

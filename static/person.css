@@ -1,0 +1,21 @@
+.main-content{
+    align-items: unset;
+}
+
+.main-content .details p:nth-of-type(2){
+    font-size:unset;
+    line-height:1.5;
+    max-height: 240px;
+    overflow:auto;
+}
+
+.known_for h2{
+    padding: 1em 0;
+    border-bottom: 2px solid black;
+}
+
+@media(max-width: 767px){
+    .main-content{
+        align-items:center;
+    }
+}

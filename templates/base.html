@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+    {% block title %}
+        <title>TMDB - Search</title>    
+    {% endblock title %}
+    <link href="https://fonts.googleapis.com/css2?family=Padauk&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/base.css">
+    
+    {% block styles %}
+    {% endblock styles %}
+</head>
+
+<body>
+    <header>
+        <section class="logo">
+            <span><a href="/">MMDB</a></span>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="/explore/movie">Movies</a></li>
+                <li><a href="/explore/tv">Tv</a></li>
+                <li><a href="/explore/person">Actors</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+        {% block content %}
+            
+        {% endblock content %}
+    </div>
+    <footer class="footer-distributed"> 
+        <div class="footer-right"> 
+            <a target="_blank" href="mailto:asifmohammed290602@gmail.com"><i class="fa fa-send"></i></a>
+            <a target="_blank" href="https://twitter.com/asifshaik_02"><i class="fa fa-twitter"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/asifshaik02/"><i class="fa fa-linkedin"></i></a>
+            <a target="_blank" href="https://github.com/asifshaik02"><i class="fa fa-github"></i></a> 
+        </div>
+ 
+        <div class="footer-left">
+            <p class="footer-links">
+                <a class="link-1" href="/">Home</a>
+                <a href="/explore/movie">Movies</a>
+                <a href="/explore/tv">Tv</a>
+                <a href="/explore/person">Person</a>
+                <a href="/credits">Credits</a>
+            </p>
+            <p>MMDB &copy; 2021</p>
+        </div>
+    <script src="https://use.fontawesome.com/84d99831f1.js"></script>
+
+</body>
+        
+</html>

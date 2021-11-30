@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>{{m['title']}}</title>
+{% endblock title %}
+{% block styles %}
+    <link rel="stylesheet" href="../static/movie.css">
+{% endblock styles %}
+{% block content %}
+    <section class="main-content">
+        <img src="{{ m['img'] }}" alt="poster" width="400" height="500">
+        <section class="details">
+            <h1>{{m['title']}}</h1>
+            <p>{{m['release_date']}} &#9679; {% for i in m['genre'] %}{{i}},{% endfor %} &#9679; {{m['runtime']}} min</p>
+            <h2>Plot</h2>
+            <p>{{m['plot']}}</p>
+            <p><b>Rating: </b>{{m['rating']}}</p>
+        </section>
+    </section>
+    
+    <section class="scroll-content">
+        <h2>Cast</h2>
+        <section class="data">
+            {% for i in k %}
+            <div class="thumbnail">
+                <a href="{{ i['path'] }}">
+                    <img src="{{i['img']}}" alt="poster" width="200" height="300">
+                    <h4>{{i['title']}}</h4>
+                </a>
+            </div>
+            {% endfor %}
+        </section>
+    </section>
+    <section class="scroll-content">
+        <h2>Similar</h2>
+        <section class="data">
+            {% for i in s %}
+            <div class="thumbnail">
+                <a href="{{ i['path'] }}">
+                    <img src="{{i['img']}}" alt="poster" width="200" height="300">
+                    <h4>{{i['title']}}</h4>
+                </a>
+            </div>
+            {% endfor %}
+        </section>
+    </section>
+{% endblock content %}
+        
+    
